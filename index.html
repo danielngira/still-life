@@ -1,6 +1,7 @@
 <style>
-
-  * { box-sizing: border-box; }
+  * {
+    box-sizing: border-box;
+  }
 
   body {
     display: flex;
@@ -18,28 +19,36 @@
     border: 1px dashed;
     overflow: hidden;
   }
-  
+
   /*table*/
-  .frame::before{
+  .frame::before {
     content: "";
     position: absolute;
-    left: -40px; 
-    right: -40px; 
+    left: -40px;
+    right: -40px;
     bottom: -60px;
     height: 220px;
     background: linear-gradient(180deg, #d2c1ab 0%, #c3ae95 55%, #b09277 100%);
     clip-path: polygon(6% 0%, 94% 0%, 100% 100%, 0% 100%);
-    box-shadow: 0 -8px 0 rgba(0,0,0,.08);
+    box-shadow: 0 -8px 0 rgba(0, 0, 0, .08);
     z-index: 0;
     transform: skew(3deg, 3deg);
-}
-  
+  }
+
   .cup,
-.container-top, .container-middle, .container-base,
-.kettle_top, .kettle_body, .kettle_middle, .kettle, .kettle_lid, .kettle_handle, .kettle_socket{
-  z-index: 2;
-}
-  
+  .container-top,
+  .container-middle,
+  .container-base,
+  .kettle_top,
+  .kettle_body,
+  .kettle_middle,
+  .kettle,
+  .kettle_lid,
+  .kettle_handle,
+  .kettle_socket {
+    z-index: 2;
+  }
+
   .kettle {
     display: flex;
     position: absolute;
@@ -50,8 +59,8 @@
     left: 60px;
     top: 48px;
   }
-  
-  .kettle_middle{
+
+  .kettle_middle {
     display: flex;
     position: absolute;
     width: 143px;
@@ -61,8 +70,8 @@
     left: 315px;
     top: 245px;
   }
-  
-  .kettle_body{
+
+  .kettle_body {
     display: flex;
     position: absolute;
     width: 240px;
@@ -72,8 +81,8 @@
     left: 266px;
     top: 108px;
   }
-  
-  .kettle_top{
+
+  .kettle_top {
     display: flex;
     position: absolute;
     width: 280px;
@@ -83,8 +92,8 @@
     left: 239px;
     top: 60px;
   }
-  
-  .kettle_lid{
+
+  .kettle_lid {
     display: flex;
     position: absolute;
     width: 50px;
@@ -94,13 +103,13 @@
     left: 360px;
     top: 85px;
   }
-  
-  .kettle_midsection{
+
+  .kettle_midsection {
     display: flex;
     flex-direction: row;
   }
-  
-  .kettle_socket{
+
+  .kettle_socket {
     display: flex;
     position: absolute;
     width: 40px;
@@ -108,10 +117,10 @@
     background: orange;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 7% 100%);
     left: 240px;
-    top: 150px;  
+    top: 150px;
   }
-  
-  .kettle_handle{
+
+  .kettle_handle {
     display: flex;
     position: absolute;
     width: 200px;
@@ -119,31 +128,31 @@
     background: black;
     clip-path: polygon(53% 7%, 33% 16%, 24% 32%, 22% 45%, 21% 59%, 20% 70%, 20% 80%, 20% 91%, 32% 91%, 32% 79%, 32% 66%, 33% 50%, 35% 39%, 40% 29%, 54% 26%);
     left: 140px;
-    top: 140px;  
+    top: 140px;
   }
-  
-  .container{
+
+  .container {
     display: flex;
     flex-direction: column;
   }
-  
-  .container-base{
-    --c: 85; 
+
+  .container-base {
+    --c: 85;
     display: flex;
     position: absolute;
     width: 200px;
     height: 100px;
     background: red;
     aspect-ratio: 3/2;
-    mask: radial-gradient(calc(var(--c)*1%) 100% at 50% calc(-100%*cos(asin(50/var(--c)))),#0000 calc(100% - 1px),#000);
+    mask: radial-gradient(calc(var(--c)*1%) 100% at 50% calc(-100%*cos(asin(50/var(--c)))), #0000 calc(100% - 1px), #000);
     clip-path: ellipse(calc(var(--c)*1%) 100% at top);
     /*clip-path: polygon(11% 61%, 91% 61%, 91% 91%, 88% 94%, 83% 97%, 76% 98%, 65% 98%, 49% 98%, 37% 98%, 28% 98%, 19% 96%, 11% 91%);*/
     left: 130px;
-    top: 400px; 
+    top: 400px;
   }
-  
-  .container-middle{
-    --c: 100; 
+
+  .container-middle {
+    --c: 100;
     display: flex;
     position: absolute;
     width: 200px;
@@ -152,14 +161,14 @@
     border: solid;
     background: yellow;
     aspect-ratio: 3/2;
-    mask: radial-gradient(calc(var(--c)*1%) 100% at 50% calc(-100%*cos(asin(50/var(--c)))),#0000 calc(100% - 1px),#000);
+    mask: radial-gradient(calc(var(--c)*1%) 100% at 50% calc(-100%*cos(asin(50/var(--c)))), #0000 calc(100% - 1px), #000);
     clip-path: ellipse(calc(var(--c)*1%) 100% at top);
     /*clip-path: polygon(11% 61%, 91% 61%, 91% 91%, 88% 94%, 83% 97%, 76% 98%, 65% 98%, 49% 98%, 37% 98%, 28% 98%, 19% 96%, 11% 91%);*/
     left: 130px;
-    top: 230px; 
+    top: 230px;
   }
-  
-  .container-top{
+
+  .container-top {
     display: flex;
     position: absolute;
     --r: 40px;
@@ -170,10 +179,10 @@
     border: solid;
     border-radius: 100% / calc(var(--r) * 2);
     left: 130px;
-    top: 190px; 
+    top: 190px;
   }
-  
-  .cup{
+
+  .cup {
     display: flex;
     position: absolute;
     --r: 20px;
@@ -184,8 +193,8 @@
     border: solid;
     border-radius: 100% / calc(var(--r) * 2);
     left: 200px;
-    top: 100px;  
-  } 
+    top: 100px;
+  }
 </style>
 
 <div class="frame">
@@ -194,17 +203,17 @@
   </div>
   <div class="container">
     <div class="container-top"></div>
-     <div class="container-middle"></div>
-     <div class="container-base"></div>
+    <div class="container-middle"></div>
+    <div class="container-base"></div>
   </div>
   <div>
     <div class="kettle_lid"></div>
     <div class="kettle_top"></div>
     <div class="kettle_body"></div>
     <div>
-       <div class="kettle_handle"></div>
-       <div class="kettle_socket"></div>
-       <div class="kettle_middle"></div>  
+      <div class="kettle_handle"></div>
+      <div class="kettle_socket"></div>
+      <div class="kettle_middle"></div>
     </div>
     <div class="kettle"></div>
   </div>
