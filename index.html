@@ -249,10 +249,16 @@
     position: absolute;
     left: 70px;
     top: 58px;
-    font: 800 32px/0.95 system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+    font: 900 34px/0.95 system-ui, -apple-system, Segoe UI, Arial, sans-serif;
     letter-spacing: 1px;
     color: rgba(0, 0, 0, .78);
     text-shadow: 0 2px 0 rgba(255, 255, 255, .22);
+    background-clip: text;
+    transform: perspective(500px) rotateY(20deg) skew(0deg, -2deg);
+    transform-origin: 60% 60%;
+    mask-image: radial-gradient(ellipse 120px 70px at 50% 50%, #000 62%, transparent 92%);
+    filter: drop-shadow(0 2px 0 rgba(255, 255, 255, .15));
+
   }
 
   .container-top {
