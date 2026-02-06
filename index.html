@@ -19,6 +19,27 @@
     overflow: hidden;
   }
   
+  /*table*/
+  .frame::before{
+    content: "";
+    position: absolute;
+    left: -40px; 
+    right: -40px; 
+    bottom: -60px;
+    height: 220px;
+    background: linear-gradient(180deg, #d2c1ab 0%, #c3ae95 55%, #b09277 100%);
+    clip-path: polygon(6% 0%, 94% 0%, 100% 100%, 0% 100%);
+    box-shadow: 0 -8px 0 rgba(0,0,0,.08);
+    z-index: 0;
+    transform: skew(3deg, 3deg);
+}
+  
+  .cup,
+.container-top, .container-middle, .container-base,
+.kettle_top, .kettle_body, .kettle_middle, .kettle, .kettle_lid, .kettle_handle, .kettle_socket{
+  z-index: 2;
+}
+  
   .kettle {
     display: flex;
     position: absolute;
