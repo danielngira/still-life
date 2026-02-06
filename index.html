@@ -12,7 +12,7 @@
 
   .frame {
     position: relative;
-    flex-direction: column;
+    flex-direction: row;
     width: 500px;
     height: 500px;
     border: 1px dashed;
@@ -101,17 +101,90 @@
     top: 140px;  
   }
   
+  .container{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .container-base{
+    --c: 85; 
+    display: flex;
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    background: red;
+    aspect-ratio: 3/2;
+    mask: radial-gradient(calc(var(--c)*1%) 100% at 50% calc(-100%*cos(asin(50/var(--c)))),#0000 calc(100% - 1px),#000);
+    clip-path: ellipse(calc(var(--c)*1%) 100% at top);
+    /*clip-path: polygon(11% 61%, 91% 61%, 91% 91%, 88% 94%, 83% 97%, 76% 98%, 65% 98%, 49% 98%, 37% 98%, 28% 98%, 19% 96%, 11% 91%);*/
+    left: 130px;
+    top: 400px; 
+  }
+  
+  .container-middle{
+    --c: 100; 
+    display: flex;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-color: grey;
+    border: solid;
+    background: yellow;
+    aspect-ratio: 3/2;
+    mask: radial-gradient(calc(var(--c)*1%) 100% at 50% calc(-100%*cos(asin(50/var(--c)))),#0000 calc(100% - 1px),#000);
+    clip-path: ellipse(calc(var(--c)*1%) 100% at top);
+    /*clip-path: polygon(11% 61%, 91% 61%, 91% 91%, 88% 94%, 83% 97%, 76% 98%, 65% 98%, 49% 98%, 37% 98%, 28% 98%, 19% 96%, 11% 91%);*/
+    left: 130px;
+    top: 230px; 
+  }
+  
+  .container-top{
+    display: flex;
+    position: absolute;
+    --r: 40px;
+    width: 200px;
+    height: 100px;
+    background: yellow;
+    border-color: grey;
+    border: solid;
+    border-radius: 100% / calc(var(--r) * 2);
+    left: 130px;
+    top: 190px; 
+  }
+  
+  .cup{
+    display: flex;
+    position: absolute;
+    --r: 20px;
+    width: 100px;
+    height: 200px;
+    background: blue;
+    border-color: grey;
+    border: solid;
+    border-radius: 100% / calc(var(--r) * 2);
+    left: 200px;
+    top: 100px;  
+  } 
 </style>
 
-
 <div class="frame">
-  <div class="kettle_lid"></div>
-  <div class="kettle_top"></div>
-  <div class="kettle_body"></div>
   <div>
-     <div class="kettle_handle"></div>
-     <div class="kettle_socket"></div>
-     <div class="kettle_middle"></div>  
+    <div class="cup"></div>
   </div>
-  <div class="kettle"></div>
+  <div class="container">
+    <div class="container-top"></div>
+     <div class="container-middle"></div>
+     <div class="container-base"></div>
+  </div>
+  <div>
+    <div class="kettle_lid"></div>
+    <div class="kettle_top"></div>
+    <div class="kettle_body"></div>
+    <div>
+       <div class="kettle_handle"></div>
+       <div class="kettle_socket"></div>
+       <div class="kettle_middle"></div>  
+    </div>
+    <div class="kettle"></div>
+  </div>
 </div>
