@@ -106,7 +106,7 @@
     overflow: hidden;
   }
 
-  
+
   .kettle_body::before {
     content: "";
     position: absolute;
@@ -124,20 +124,20 @@
       70px 0 0 rgba(255, 255, 255, .22),
       140px 0 0 rgba(255, 255, 255, .10);
   }
-  
+
   .kettle_body::after {
     content: "";
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background: 
-        radial-gradient(ellipse 100px 120px at 15% 55%, rgba(0, 0, 0, .15), transparent 60%),
-        radial-gradient(ellipse 160px 140px at 108% 55%, rgba(0, 0, 0, .25), transparent 60%);
+    background:
+      radial-gradient(ellipse 100px 120px at 15% 55%, rgba(0, 0, 0, .15), transparent 60%),
+      radial-gradient(ellipse 160px 140px at 108% 55%, rgba(0, 0, 0, .25), transparent 60%);
     /*background: radial-gradient(ellipse 160px 140px at 108% 55%, rgba(0, 0, 0, .22), transparent 60%);*/
     mix-blend-mode: multiply;
     opacity: .65;
   }
-  
+
   .kettle_top {
     display: flex;
     position: absolute;
@@ -154,9 +154,9 @@
     position: absolute;
     width: 50px;
     height: 30px;
-    background: 
-        radial-gradient(ellipse 20px 12px at 50% 25%, rgba(80, 80, 80, 1), transparent 70%),
-        linear-gradient(180deg, #404040 0%, #1a1a1a 45%, #000 100%);
+    background:
+      radial-gradient(ellipse 20px 12px at 50% 25%, rgba(80, 80, 80, 1), transparent 70%),
+      linear-gradient(180deg, #404040 0%, #1a1a1a 45%, #000 100%);
     filter: drop-shadow(0 12px 14px rgba(0, 0, 0, .35));
     border-radius: 6px;
     clip-path: polygon(16% 0, 75% 0%, 68% 75%, 64% 100%, 29% 100%, 25% 76%);
@@ -304,71 +304,76 @@
     top: -6px;
     height: 30px;
     border-radius: 999px;
-    /*background: linear-gradient(90deg, rgba(255, 255, 255, .75), rgba(255, 255, 255, .15), rgba(0, 0, 0, .08));*/
-    background: 
-        radial-gradient(ellipse 50px 15px at 50% 40%, rgba(255, 255, 255, .85), transparent 70%),
-        linear-gradient(95deg, rgba(240, 240, 240, 1), rgba(200, 200, 205, 1), rgba(120, 120, 125, .8));
-    border: 2px solid rgba(0, 0, 0, .4);
+    background:
+      radial-gradient(ellipse 50px 15px at 50% 40%, rgba(255, 255, 255, .85), transparent 70%),
+      linear-gradient(95deg, rgba(240, 240, 240, 1), rgba(200, 200, 205, 1), rgba(120, 120, 125, .8));
+    border: 2px solid rgba(0, 0, 0, .45);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, .15);
   }
-  /* Curved blue stripes on cup */
-    .stripe {
-      position: absolute;
-      width: 120%;
-      height: 12px;
-      background: #1d4aa8;
-      mix-blend-mode: multiply;
-      opacity: .85;
-    }
 
-    .stripe1 { 
-      top: 35px; 
-      transform: rotate(-1.5deg);
-      box-shadow: 0 2px 3px rgba(0, 0, 0, .15);
-    }
-    
-    .stripe2 { 
-      top: 61px; 
-      transform: rotate(-1deg);
-      box-shadow: 0 2px 3px rgba(0, 0, 0, .15);
-    }
-    
-    .stripe3 { 
-      top: 87px; 
-      transform: rotate(-0.5deg);
-      box-shadow: 0 2px 3px rgba(0, 0, 0, .15);
-    }
-    
-    .stripe4 { 
-      top: 113px; 
-      transform: rotate(0deg);
-      box-shadow: 0 2px 3px rgba(0, 0, 0, .15);
-    }
-    
-    .stripe5 { 
-      top: 139px; 
-      transform: rotate(0.5deg);
-      box-shadow: 0 2px 3px rgba(0, 0, 0, .15);
-    }
-    
-    .stripe6 { 
-      top: 165px; 
-      transform: rotate(1deg);
-      box-shadow: 0 2px 3px rgba(0, 0, 0, .15);
-    }
-  
-    .cup::after {
-        content: "";
-        position: absolute;
-        left: 15px;
-        top: 30px;
-        width: 25px;
-        height: 140px;
-        background: linear-gradient(180deg, rgba(255, 255, 255, .45), rgba(255, 255, 255, .1));
-        border-radius: 999px;
-        transform: skewY(-2deg);
-        pointer-events: none;
-        z-index: 2;
-    }
+  /* Curved blue stripes on cup */
+  .stripe {
+    position: absolute;
+    width: 120%;
+    height: 12px;
+    background: #1d4aa8;
+    mix-blend-mode: multiply;
+    opacity: .85;
+    --c: 100;
+    aspect-ratio: 3/2;
+    mask: radial-gradient(calc(var(--c)*1%) 100% at 50% calc(-100%*cos(asin(50/var(--c)))), #0000 calc(100% - 1px), #000);
+    clip-path: ellipse(calc(var(--c)*1%) 100% at top);
+  }
+
+  .stripe1 {
+    top: 35px;
+    transform: rotate(-1.5deg);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, .15);
+  }
+
+  .stripe2 {
+    top: 61px;
+    transform: rotate(-1deg);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, .15);
+  }
+
+  .stripe3 {
+    top: 87px;
+    transform: rotate(-0.5deg);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, .15);
+  }
+
+  .stripe4 {
+    top: 113px;
+    transform: rotate(0deg);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, .15);
+  }
+
+  .stripe5 {
+    top: 139px;
+    transform: rotate(0.5deg);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, .15);
+  }
+
+  .stripe6 {
+    top: 165px;
+    transform: rotate(1deg);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, .15);
+  }
+
+  .cup::after {
+    content: "";
+    position: absolute;
+    left: 15px;
+    top: 30px;
+    width: 25px;
+    height: 140px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, .45), rgba(255, 255, 255, .1));
+    border-radius: 999;
+    transform: skewY(-2deg);
+    pointer-events: none;
+    z-index: 2;
+  }
 </style>
 
 <div class="frame">
