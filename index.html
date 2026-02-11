@@ -30,7 +30,9 @@
     height: 220px;
     background: linear-gradient(180deg, #d2c1ab 0%, #c3ae95 55%, #b09277 100%);
     clip-path: polygon(6% 0%, 94% 0%, 100% 100%, 0% 100%);
-    box-shadow: 0 -8px 0 rgba(0, 0, 0, .08);
+    box-shadow: 
+      0 -12px 20px rgba(0, 0, 0, .14),
+      0 -4px 8px rgba(0, 0, 0, .1);
     z-index: 0;
     transform: skew(1deg, 1deg);
   }
@@ -53,11 +55,12 @@
   .kettle_top,
   .kettle_middle,
   .kettle_socket {
-    border: 2px solid rgba(0, 0, 0, .22);
-    background:
-      radial-gradient(160px 90px at 28% 30%, rgba(255, 255, 255, .55), transparent 62%),
-      linear-gradient(90deg, #9a2400 0%, #ff4d00 18%, #ff8b00 55%, #c43b00 100%);
-    filter: drop-shadow(0 20px 18px rgba(0, 0, 0, .28));
+    border: 2px solid rgba(0, 0, 0, .32);
+  background:
+    radial-gradient(180px 110px at 22% 25%, rgba(255, 255, 255, .72), transparent 68%),
+    radial-gradient(140px 100px at 78% 50%, rgba(200, 80, 30, 1), transparent 72%),
+    linear-gradient(110deg, #a52600 0%, #ff5500 20%, #ff9500 58%, #ff7000 78%, #c94000 100%);
+  filter: drop-shadow(0 26px 24px rgba(0, 0, 0, .38)) drop-shadow(0 10px 14px rgba(0, 0, 0, .24));
   }
 
   .kettle_body,
@@ -136,7 +139,7 @@
       radial-gradient(ellipse 180px 150px at 105% 55%, rgba(0, 0, 0, .28), transparent 65%),
       linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, .08) 100%);
     mix-blend-mode: multiply;
-    opacity: .65;
+    opacity: .75;
   }
 
   .kettle_top {
