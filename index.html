@@ -250,7 +250,8 @@
 
   /* “Cafe Bustelo” label */
   .container-middle::before {
-    content: "CAFÉ\A BUSTELO";
+    content: "";
+    /*content: "CAFÉ\A BUSTELO";*/
     white-space: pre;
     position: absolute;
     left: 70px;
@@ -374,6 +375,43 @@
     pointer-events: none;
     z-index: 2;
   }
+  
+  .cafe-text {
+      position: absolute;
+      left: 50%;
+      top: 80%;
+      transform: translate(-30%, -50%);
+      width: 200px;
+      height: 200px;
+      pointer-events: none;
+    }
+
+    .cafe-text span {
+      position: absolute;
+      left: 50%;
+      font: 900 40px/1 'Arial Black', sans-serif;
+      letter-spacing: 0px;
+      color: rgba(0, 0, 0, .85);
+      text-shadow: 
+        0 1px 0 rgba(255, 255, 255, .3),
+        0 2px 2px rgba(0, 0, 0, .15);
+      transform-origin: center -110px;
+    }
+
+    /* Individual letter positioning for "CAFÉ" */
+    .cafe-text .letter-c { transform: translate(-50%, 0) rotate(-35deg); }
+    .cafe-text .letter-a1 { transform: translate(-50%, 0) rotate(-20deg); }
+    .cafe-text .letter-f { transform: translate(-50%, 0) rotate(-5deg); }
+    .cafe-text .letter-e1 { transform: translate(-50%, 0) rotate(10deg); }
+  
+    /* Individual letter positioning for "BUSTELO" */
+    .cafe-text .letter-b { transform: translate(-50%, 0) rotate(-45deg); top: 35px; }
+    .cafe-text .letter-u { transform: translate(-50%, 0) rotate(-32deg); top: 35px; }
+    .cafe-text .letter-s { transform: translate(-50%, 0%) rotate(-19deg); top: 35px; }
+    .cafe-text .letter-t { transform: translate(-50%, 0%) rotate(-6deg); top: 35px; }
+    .cafe-text .letter-e2 { transform: translate(-50%, 0%) rotate(7deg); top: 35px; }
+    .cafe-text .letter-l { transform: translate(-50%, 0%) rotate(20deg); top: 35px; }
+    .cafe-text .letter-o { transform: translate(-50%, 0%) rotate(33deg); top: 35px; }
 </style>
 
 <div class="frame">
@@ -389,7 +427,21 @@
   </div>
   <div class="container">
     <div class="container-top"></div>
-    <div class="container-middle"></div>
+    <div class="container-middle">
+      <div class="cafe-text">
+          <span class="letter-c">É</span>
+          <span class="letter-a1">F</span>
+          <span class="letter-f">A</span>
+          <span class="letter-e1">C</span>
+          <span class="letter-b">O</span>
+          <span class="letter-u">L</span>
+          <span class="letter-s">E</span>
+          <span class="letter-t">T</span>
+          <span class="letter-e2">S</span>
+          <span class="letter-l">U</span>
+          <span class="letter-o">B</span>
+        </div>
+    </div>
     <div class="container-base"></div>
   </div>
   <div>
